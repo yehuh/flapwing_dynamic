@@ -130,21 +130,21 @@ void RenderScene(void)
 	  glRotatef(ob_angle_z,0.0,0.0,1.0);
       glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE,gray);   
 
-         glColor3f(1.0f,0.0f,0.0f);   //標示x軸為紅色
+         glColor3f(1.0f,0.0f,0.0f);   //make x axis red
 		 glLineWidth(3.0f);
 		 glBegin(GL_LINES);
 		 glVertex3f(0.0f,0.0f,0.0f);
          glVertex3f(200.0f,0.0f,0.0f);
 		 glEnd();
 
-		 glColor3f(0.0f,1.0f,0.0f);  //標示y軸為綠色
+		 glColor3f(0.0f,1.0f,0.0f);  //make y axis green
 		 glLineWidth(3.0f);
 		 glBegin(GL_LINES);
 		 glVertex3f(0.0f,0.0f,0.0f);
          glVertex3f(0.0f,200.0f,0.0f);
 		 glEnd();
 
-		 glColor3f(0.0f,0.0f,1.0f);  //標示z軸為藍色
+		 glColor3f(0.0f,0.0f,1.0f);  //make z axis blue
 		 glLineWidth(3.0f);
 		 glBegin(GL_LINES);
 		 glVertex3f(0.0f,0.0f,0.0f);
@@ -282,7 +282,7 @@ void RenderScene(void)
 		 
 		 glPushMatrix();                              //assembling of wheel_XL(rotating included)
 		 glRotatef(-20.0f-time2+180,0.0f,0.0f,1.0f);
-		 glTranslatef(-25.0f,-25.0f,5.0f);            //glTranslatef(25*sqrt(2)*cos((45-time2)*pi/180)-25.0f,25*sqrt(2)*sin((45-time2)*pi/180)-25.0f,0.0f)-->智障作法
+		 glTranslatef(-25.0f,-25.0f,5.0f);            //glTranslatef(25*sqrt(2)*cos((45-time2)*pi/180)-25.0f,25*sqrt(2)*sin((45-time2)*pi/180)-25.0f,0.0f)-->idiot process
 		 glColor3f(1.0f,1.0f,1.0f);
 		 glCallList(wheel_XL);
 		 glPopMatrix();
@@ -595,7 +595,7 @@ void ChangeSize(GLsizei w,GLsizei h)
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 
-   glOrtho(-300.0f,100.0f, -200.0f, 200.f, -200.0f, 200.0f); //顯示範圍
+   glOrtho(-300.0f,100.0f, -200.0f, 200.f, -200.0f, 200.0f); //Area showed
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();

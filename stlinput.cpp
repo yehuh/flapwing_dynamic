@@ -23,20 +23,20 @@ const GLfloat pi=3.1415926f;
 	    set_point plan[3];
 	  };
 
-      struct tre_dim_object                       //定義3d物件
+      struct tre_dim_object                       //define 3d object
 	  {  
 	   set_tri_surface obj_plan;
 	   set_point nomalvector;	
 	  };
 
 
-GLint sum_of_plan(char fname[20])  //預先讀取,看文件有幾行
+GLint sum_of_plan(char fname[20])  //pre-read,row-counting of th document
 {
 	     string text;
 	     string text1;
-	     int line =0;             //目前執行文件的第幾行
+	     int line =0;             //the number of row counted
 	     bool end = false;
-	     int size =0;             //總共幾行
+	     int size =0;             //total number of row
 
 
 	     ifstream pre(fname);
@@ -60,7 +60,7 @@ tre_dim_object *read(char filename[20],GLint n)
     	obj1 = new tre_dim_object[n];
 	    string text;
 	    string text1;
-	    int line =0;             //目前執行文件的第幾行
+	    int line =0;             //the number of row counted
 	    int choice =0;
 	    bool end = false;
 
@@ -139,13 +139,13 @@ void stlinput(char filenamet[20],GLuint file)
         tre_dim_object *obj;
         GLint num_plan = 0;
 
-        num_plan = sum_of_plan(filenamet);         //檔案名稱
+        num_plan = sum_of_plan(filenamet);         //filename
         obj = read(filenamet,num_plan);
 
 
-      glNewList(file, GL_COMPILE);        //將物件暫存於file
+      glNewList(file, GL_COMPILE);        //Save 3d-object as "file" temporary
       {
-		glBegin(GL_TRIANGLES);            //開始畫物件
+		glBegin(GL_TRIANGLES);            //3d-object drawing start
          for(int i =0;i<num_plan;i++)
 		 {
              glNormal3d(obj[i].nomalvector.X, obj[i].nomalvector.Y,obj[i].nomalvector.Z);
@@ -153,7 +153,7 @@ void stlinput(char filenamet[20],GLuint file)
 			 glVertex3d(obj[i].obj_plan.plan[1].X, obj[i].obj_plan.plan[1].Y, obj[i].obj_plan.plan[1].Z);
 			 glVertex3d(obj[i].obj_plan.plan[2].X, obj[i].obj_plan.plan[2].Y, obj[i].obj_plan.plan[2].Z);
 		 }
-		 glEnd();                          //繪畫結束
+		 glEnd();                          //3d-object drawing end
 	  }
 	  glEndList();
 
