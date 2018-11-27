@@ -40,6 +40,12 @@ GLint sum_of_plan(const char fname[20])  //pre-read,row-counting of th document
 
 
 	     ifstream pre(fname);
+
+		 if (pre.fail())
+		 {
+			 cout << "file load failed";
+		 }
+
 	     while(end==false)
 		 { 
            getline(pre, text1, '\n');
