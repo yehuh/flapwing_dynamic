@@ -3,7 +3,7 @@
 #include <string>
 #include<windows.h>
 #include<gl\glut.h>
-#include<gl\gl.h>
+//#include<gl\gl.h>
 #include"stlinput.H"
 using namespace std;
 
@@ -30,7 +30,7 @@ const GLfloat pi=3.1415926f;
 	  };
 
 
-GLint sum_of_plan(char fname[20])  //pre-read,row-counting of th document
+GLint sum_of_plan(const char fname[20])  //pre-read,row-counting of th document
 {
 	     string text;
 	     string text1;
@@ -54,7 +54,7 @@ GLint sum_of_plan(char fname[20])  //pre-read,row-counting of th document
 }
 
 
-tre_dim_object *read(char filename[20],GLint n)
+tre_dim_object *read(const char filename[20],GLint n)
 {
        tre_dim_object *obj1;
     	obj1 = new tre_dim_object[n];
@@ -132,7 +132,7 @@ tre_dim_object *read(char filename[20],GLint n)
 
 
 
-void stlinput(char filenamet[20],GLuint file)
+void stlinput(const char filenamet[20],GLuint file)
 {
 	  	 
 	  
